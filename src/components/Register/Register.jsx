@@ -1,7 +1,7 @@
-import { useState, useHistory } from "react";
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
