@@ -1,11 +1,22 @@
-
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
+import Header from './components/Header/Header';
+import Homepage from './components/Homepage/Homepage';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
   return (
-    <div className="App">
-     AthenaHack
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </>
   );
 }
 
