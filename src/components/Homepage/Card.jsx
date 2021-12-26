@@ -28,8 +28,10 @@ const Card = ({ item, price, beforePrice, discount }) => {
           {discount}
         </div>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqsSnT-G8xFU4-VJHwLxogDJfjRA1nmabC3wxHDfZR&usqp=CAE&s"
+          src={item.image}
           alt=""
+          width="135"
+          height="180"
         />
       </div>
       <div style={{ fontSize: '1.25rem', fontWeight: '600' }}>{item.name}</div>
