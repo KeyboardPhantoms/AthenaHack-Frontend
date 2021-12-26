@@ -13,7 +13,7 @@ const Card = ({ item, price, beforePrice, discount }) => {
         marginRight: '3rem',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
       }}
     >
       <div>
@@ -42,13 +42,13 @@ const Card = ({ item, price, beforePrice, discount }) => {
       <div
         style={{
           fontWeight: '500',
-          background: '#B82051',
+          //background: '#B82051',
           marginLeft: '1rem',
           marginTop: '0.5rem',
           width: '10rem',
           lineHeight: '1.5rem',
           borderRadius: '1rem',
-          color: '#fff',
+          //color: '#fff',
         }}
       >
         {item.genre}
