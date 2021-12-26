@@ -1,10 +1,11 @@
 import data from '../../data';
 import Card from './Card';
+import Features from './Features';
 import './Homepage.css';
 const Homepage = () => {
   return (
     <div>
-      <div style={{ padding: '2rem' }}>
+      <div style={{ padding: '1rem 2rem 2rem 2rem' }}>
         <div>
           <img
             src="https://cdn.shopify.com/s/files/1/0249/3857/8002/files/saurav_nanda_012_3_1800x.png?v=1633683660"
@@ -33,6 +34,8 @@ const Homepage = () => {
             </button>
           </div>
         </div>
+
+        <Features />
 
         {/* books */}
         <div style={{ padding: '1rem 0rem 1rem 0rem' }}>

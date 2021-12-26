@@ -2,7 +2,7 @@ import "./About.css";
 const About = () => {
   return (
     <>
-      <div id="About" style={{ height: "97vh" }}>
+      <div id="About" style={{ height: "90vh" , fontSize: "1.3rem"}}>
         <div
           className="container"
           style={{
@@ -75,14 +75,14 @@ const About = () => {
                     </div>
                   </div>
                   <div className="form-group">
-                    <textarea
+                    <input
                       name="message"
                       id="message"
                       className="form-control"
                       rows="4"
                       placeholder="Message"
                       required
-                    ></textarea>
+                    ></input>
                     <p className="help-block text-danger"></p>
                   </div>
                   <div id="success"></div>
