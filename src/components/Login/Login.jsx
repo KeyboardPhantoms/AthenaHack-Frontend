@@ -40,6 +40,7 @@ const Login = () => {
   				Welcome back!
    	</h2>
    	<form>
+        
    			<label>Email</label>
    			<input type="email"/>
    			<label>Password</label>
@@ -50,7 +51,7 @@ const Login = () => {
 						<span>
 							Don’t have an account?
 						</span>
-						<Link to="/"> SignUp</Link>
+						<Link to="/signup"> SignUp</Link>
 					</div>
           </div>
   );
