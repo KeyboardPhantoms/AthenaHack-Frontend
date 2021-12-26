@@ -9,29 +9,55 @@ const Header = () => {
         justifyContent: 'space-around',
         alignItems: 'center',
         fontSize: '1.5rem',
-        color: '#fff',
+        color: '#fff !imp',
         height: '10vh',
         textDecoration: 'none',
       }}
     >
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <img
+      <Link
+        to="/"
+        style={{
+          textDecoration: 'none',
+          color: 'wheat',
+          fontSize: '2rem',
+          fontWeight: '700',
+        }}
+      >
+        {/* <img
           src={logo}
           alt="logo"
-          width="70"
-          height="70"
-          // style={{ borderRadius: '50%' }}
+          width="50"
+          height="50"
+          style={{ marginTop: '1rem' }}
         />
+        &nbsp; */}
+        Bookie Bits
       </Link>
 
       <div style={{ display: 'flex' }}>
         <div style={{ marginRight: '3rem' }}>
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            Login
+          <Link
+            to="/register"
+            style={{
+              textDecoration: 'none',
+              color: 'wheat',
+              fontSize: '2rem',
+              fontWeight: '700',
+            }}
+          >
+            Login/Register
           </Link>
         </div>
         <div>
-          <Link to="/about" style={{ textDecoration: 'none' }}>
+          <Link
+            to="/about"
+            style={{
+              textDecoration: 'none',
+              color: 'wheat',
+              fontSize: '2rem',
+              fontWeight: '700',
+            }}
+          >
             About
           </Link>
         </div>
