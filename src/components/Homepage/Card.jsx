@@ -74,7 +74,6 @@ const Card = ({ item, price, beforePrice, discount, type }) => {
       }
     ).then((t) => t.json());
 
-
     const options = {
       key: 'rzp_test_7NFjEzrn3WQR0c',
       currency: data.currency,
@@ -144,13 +143,13 @@ const Card = ({ item, price, beforePrice, discount, type }) => {
       <div
         style={{
           fontWeight: '500',
-          //background: '#B82051',
+          background: '#B82051',
           marginLeft: '1rem',
           marginTop: '0.5rem',
           width: '10rem',
           lineHeight: '1.5rem',
           borderRadius: '1rem',
-          //color: '#fff',
+          color: '#fff',
         }}
       >
         {item.genre}
