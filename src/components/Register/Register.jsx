@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './Register.css';
 const Register = () => {
   const navigate = useNavigate();
 
@@ -32,32 +33,21 @@ const Register = () => {
   }
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={registerUser}>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Name"
-        />
-        <br />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <br />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Password"
-        />
-        <br />
-        <input type="submit" value="Register" />
+    <div className="formC">
+      <h2 className="title">Welcome back!</h2>
+      <form>
+        <label>Name</label>
+        <input type="name" onChange={(e) => setName(e.target.value)} />
+        <label>Email</label>
+        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+        <label>Password</label>
+        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={registerUser}>Signup</button>
       </form>
+      <div className="bottom">
+        <span>Already have an account?</span>
+        <Link to="/"> Login</Link>
+      </div>
     </div>
   );
 };

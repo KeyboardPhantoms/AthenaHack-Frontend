@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
 const UserData = () => {
-  const [quote, setQuote] = useState('');
-  const [tempQuote, setTempQuote] = useState('');
+  const [bookList, setBookList] = useState(['no book' ]);
+  // const [tempQuote, setTempQuote] = useState('');
 
   async function populateQuote() {
-    const req = await fetch('http://localhost:5000/api/quote', {
+    const req = await fetch('http://localhost:5000/api/book', {
       headers: {
         'x-access-token': localStorage.getItem('token'),
       },
@@ -13,7 +13,7 @@ const UserData = () => {
 
     const data = await req.json();
     if (data.status === 'ok') {
-      setQuote(data.quote);
+      setBookList(data.bookList);
     } else {
       alert(data.error);
     }
@@ -23,41 +23,35 @@ const UserData = () => {
     populateQuote();
   }, []);
 
-  async function updateQuote(event) {
-    event.preventDefault();
+  // async function updateBook(event) {
+  //   event.preventDefault();
 
-    const req = await fetch('http://localhost:5000/api/quote', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-access-token': localStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        quote: tempQuote,
-      }),
-    });
+  //   const req = await fetch('http://localhost:5000/api/quote', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'x-access-token': localStorage.getItem('token'),
+  //     },
+  //     body: JSON.stringify({
+  //       book: tempQuote,
+  //     }),
+  //   });
 
-    const data = await req.json();
-    if (data.status === 'ok') {
-      setQuote(tempQuote);
-      setTempQuote('');
-    } else {
-      alert(data.error);
-    }
-  }
+  //   const data = await req.json();
+  //   if (data.status === 'ok') {
+  //     setBookList(tempQuote);
+  //     setTempQuote('');
+  //   } else {
+  //     alert(data.error);
+  //   }
+  // }
 
   return (
     <div>
-      <h1>Your quote: {quote || 'No quote found'}</h1>
-      <form onSubmit={updateQuote}>
-        <input
-          type="text"
-          placeholder="Quote"
-          value={tempQuote}
-          onChange={(e) => setTempQuote(e.target.value)}
-        />
-        <input type="submit" value="Update quote" />
-      </form>
+      <h1>Your books: {bookList || 'No books! Please purchase some'}</h1>
+      {bookList.map((item, index) => {
+        return <h1 key={index}>{item}</h1>;
+      })}
     </div>
   );
 };

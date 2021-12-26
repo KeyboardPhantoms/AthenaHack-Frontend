@@ -12,8 +12,8 @@ function loadScript(src) {
   });
 }
 
-const Card = ({ item, price, beforePrice, discount }) => {
-  async function displayRazorpay() {
+const Card = ({ item, price, beforePrice, discount, type }) => {
+  async function displayRazorpayBuy() {
     const res = await loadScript(
       'https://checkout.razorpay.com/v1/checkout.js'
     );
@@ -24,7 +24,7 @@ const Card = ({ item, price, beforePrice, discount }) => {
     }
 
     const data = await fetch(
-      'https://razorpay-hackathon-backend.herokuapp.com/razorpay',
+      'https://razorpay-hackathon-backend.herokuapp.com/razorpay/buy',
       {
         method: 'POST',
       }
@@ -47,9 +47,54 @@ const Card = ({ item, price, beforePrice, discount }) => {
         // alert(response.razorpay_signature);
       },
       prefill: {
-        name: '',
-        email: '',
-        phone_number: '',
+        method: 'upi',
+        name: 'John Doe',
+        email: 'abc@gmail.com',
+        contact: '+919999999999',
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
+
+  async function displayRazorpayRent() {
+    const res = await loadScript(
+      'https://checkout.razorpay.com/v1/checkout.js'
+    );
+
+    if (!res) {
+      alert('Razorpay SDK failed to load. Are you online?');
+      return;
+    }
+
+    const data = await fetch(
+      'https://razorpay-hackathon-backend.herokuapp.com/razorpay/rent',
+      {
+        method: 'POST',
+      }
+    ).then((t) => t.json());
+
+
+    const options = {
+      key: 'rzp_test_7NFjEzrn3WQR0c',
+      currency: data.currency,
+      amount: price.toString(),
+      order_id: data.id,
+      name: 'Order now',
+      description: 'Thank you for time. Your order is on its way.',
+      image: 'https://i.imgur.com/3g7nmJC.png',
+      handler: function (response) {
+        alert('Payment Successful');
+
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
+      },
+      prefill: {
+        method: 'upi',
+        name: 'John Doe',
+        email: 'abc@gmail.com',
+        contact: '+919999999999',
       },
     };
     const paymentObject = new window.Razorpay(options);
@@ -111,7 +156,7 @@ const Card = ({ item, price, beforePrice, discount }) => {
         {item.genre}
       </div>
       <div
-        onClick={displayRazorpay}
+        onClick={type === 'Rent' ? displayRazorpayRent : displayRazorpayBuy}
         style={{
           fontWeight: '500',
           background: '#33C8E2',
@@ -124,7 +169,7 @@ const Card = ({ item, price, beforePrice, discount }) => {
           cursor: 'pointer',
         }}
       >
-        Buy Now!
+        {type} Now!
       </div>
     </div>
   );

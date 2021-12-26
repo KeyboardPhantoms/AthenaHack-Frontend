@@ -33,24 +33,19 @@ const Login = () => {
 
   return (
     <div className="formC">
-    <h2 className="title">
-  				Welcome back!
-   	</h2>
-   	<form>
-        
-   			<label>Email</label>
-   			<input type="email"/>
-   			<label>Password</label>
-   			<input type="password"/>
-   			<button>Login</button>
-   	</form>
-   	<div className="bottom">
-						<span>
-							Don’t have an account?
-						</span>
-						<Link to="/signup"> SignUp</Link>
-					</div>
-          </div>
+      <h2 className="title">Welcome back!</h2>
+      <form>
+        <label>Email</label>
+        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+        <label>Password</label>
+        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={loginUser}>Login</button>
+      </form>
+      <div className="bottom">
+        <span>Don’t have an account?</span>
+        <Link to="/signup"> SignUp</Link>
+      </div>
+    </div>
   );
 };
 
