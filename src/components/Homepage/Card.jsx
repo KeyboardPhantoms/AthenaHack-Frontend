@@ -10,6 +10,10 @@ const Card = ({ item, price, beforePrice, discount }) => {
         textAlign: 'center',
         color: '#000',
         position: 'relative',
+        marginRight: '3rem',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
       <div>
@@ -27,12 +31,7 @@ const Card = ({ item, price, beforePrice, discount }) => {
         >
           {discount}
         </div>
-        <img
-          src={item.image}
-          alt=""
-          width="135"
-          height="180"
-        />
+        <img src={item.image} alt="" width="135" height="180" />
       </div>
       <div style={{ fontSize: '1.25rem', fontWeight: '600' }}>{item.name}</div>
       <div style={{ fontWeight: '500' }}>

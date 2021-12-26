@@ -47,7 +47,7 @@ const Homepage = () => {
           <div style={{ fontSize: '2rem', fontWeight: '700' }}>
             Rent any book @just ₹99 a month!
           </div>
-          <div>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {data.map((item, index) => {
               return (
                 <Card
@@ -67,7 +67,7 @@ const Homepage = () => {
           <div style={{ fontSize: '2rem', fontWeight: '700' }}>
             Buy any book @just ₹399!
           </div>
-          <div>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {data.map((item, index) => {
               return (
                 <Card
