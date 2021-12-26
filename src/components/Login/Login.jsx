@@ -9,23 +9,26 @@ const Login = () => {
   async function loginUser(event) {
     event.preventDefault();
 
-    const response = await fetch('https://athena-hack-backend.herokuapp.com/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    const response = await fetch(
+      'https://athena-hack-backend.herokuapp.com/api/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      }
+    );
 
     const data = await response.json();
     console.log(data);
     if (data.user) {
       localStorage.setItem('token', data.user);
       alert('Login successful');
-      window.location.href = '/user';
+      window.location.href = '/';
     } else {
       alert('Please check your username and password');
     }
