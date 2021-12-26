@@ -1,8 +1,6 @@
-
-import { useState } from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -34,25 +32,20 @@ const Login = () => {
   }
 
   return (
-    
     <div className="formC">
-    <h2 className="title">
-  				Welcome back!
-   	</h2>
-   	<form>
-   			<label>Email</label>
-   			<input type="email"/>
-   			<label>Password</label>
-   			<input type="password"/>
-   			<button>Login</button>
-   	</form>
-   	<div className="bottom">
-						<span>
-							Don’t have an account?
-						</span>
-						<Link to="/"> SignUp</Link>
-					</div>
-          </div>
+      <h2 className="title">Welcome back!</h2>
+      <form>
+        <label>Email</label>
+        <input type="email" />
+        <label>Password</label>
+        <input type="password" />
+        <button>Login</button>
+      </form>
+      <div className="bottom">
+        <span>Don’t have an account?</span>
+        <Link to="/"> SignUp</Link>
+      </div>
+    </div>
   );
 };
 

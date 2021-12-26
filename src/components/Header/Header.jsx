@@ -14,22 +14,26 @@ const Header = () => {
         textDecoration: 'none',
       }}
     >
-      <Link to="/" style={{textDecoration: 'none'}}>Bookie Bits
+      <Link to="/" style={{ textDecoration: 'none' }}>
         <img
           src={logo}
           alt="logo"
           width="70"
           height="70"
-          style={{ borderRadius: '50%' }}
+          // style={{ borderRadius: '50%' }}
         />
       </Link>
 
       <div style={{ display: 'flex' }}>
         <div style={{ marginRight: '3rem' }}>
-          <Link to="/login" style={{textDecoration: 'none' }}>Login</Link>
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            Login
+          </Link>
         </div>
         <div>
-          <Link to="/about" style={{textDecoration: 'none' }}>About</Link>
+          <Link to="/about" style={{ textDecoration: 'none' }}>
+            About
+          </Link>
         </div>
       </div>
     </div>
