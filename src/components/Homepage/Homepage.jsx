@@ -1,3 +1,4 @@
+import data from '../../data';
 import Card from './Card';
 import './Homepage.css';
 const Homepage = () => {
@@ -9,10 +10,13 @@ const Homepage = () => {
             src="https://cdn.shopify.com/s/files/1/0249/3857/8002/files/saurav_nanda_012_3_1800x.png?v=1633683660"
             width="1450"
             alt=""
+            style={{ borderRadius: '1rem' }}
           />
         </div>
         <div>
-          <div style={{ fontSize: '4rem', fontWeight: '700' }}>
+          <div
+            style={{ fontSize: '4rem', fontWeight: '700', marginTop: '1rem' }}
+          >
             An Ecommerce site to buy <br></br>and rent books.
           </div>
           <div>
@@ -29,14 +33,35 @@ const Homepage = () => {
             </button>
           </div>
         </div>
+
+        {/* books */}
+        <div style={{ padding: '1rem 0rem 1rem 0rem' }}>
+          <div style={{ fontSize: '2rem', fontWeight: '700' }}>
+            Set of 10 books @just ₹499! SALE! SALE! SALE!
+          </div>
+          <div></div>
+        </div>
+
+        {/* rent books */}
+        <div style={{ padding: '1rem 0rem 1rem 0rem' }}>
+          <div style={{ fontSize: '2rem', fontWeight: '700' }}>
+            Rent any book @just ₹99 a month!
+          </div>
+          <div></div>
+        </div>
+
+        {/* buy book */}
+        <div style={{ padding: '1rem 0rem 1rem 0rem' }}>
+          <div style={{ fontSize: '2rem', fontWeight: '700' }}>
+            Buy any book @just ₹399!
+          </div>
+          <div>
+            {data.map((item, index) => {
+              return <Card item={item} price="₹399" />;
+            })}
+          </div>
+        </div>
       </div>
-
-      <div>
-        <Card/>
-      </div>
-
-
-
     </div>
   );
 };
