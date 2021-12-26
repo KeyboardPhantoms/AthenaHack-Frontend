@@ -5,7 +5,7 @@ const UserData = () => {
   // const [tempQuote, setTempQuote] = useState('');
 
   async function populateQuote() {
-    const req = await fetch('http://localhost:5000/api/book', {
+    const req = await fetch('https://athena-hack-backend.herokuapp.com/api/book', {
       headers: {
         'x-access-token': localStorage.getItem('token'),
       },
