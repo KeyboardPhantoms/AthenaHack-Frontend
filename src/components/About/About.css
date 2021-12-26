@@ -1,0 +1,22 @@
+#About{
+    background: #141414;
+}
+.btns{
+    width: 12rem;
+    height: 3rem;
+    padding: 0.4rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5rem;
+    opacity: 0.8;
+    background-color: #5cb85c;
+    margin-bottom: 20px;
+    
+  }
+  .btns:hover {
+    opacity: 1;
+  }
+.form-group{
+    width: 30%;
+    height: 60%;
+}
