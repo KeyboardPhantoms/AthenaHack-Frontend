@@ -47,7 +47,19 @@ const Homepage = () => {
           <div style={{ fontSize: '2rem', fontWeight: '700' }}>
             Rent any book @just ₹99 a month!
           </div>
-          <div></div>
+          <div>
+            {data.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  item={item}
+                  price="₹99"
+                  beforePrice="₹149"
+                  discount="50%"
+                />
+              );
+            })}
+          </div>
         </div>
 
         {/* buy book */}
@@ -57,7 +69,15 @@ const Homepage = () => {
           </div>
           <div>
             {data.map((item, index) => {
-              return <Card item={item} price="₹399" />;
+              return (
+                <Card
+                  key={index}
+                  item={item}
+                  price="₹399"
+                  beforePrice="₹499"
+                  discount="20%"
+                />
+              );
             })}
           </div>
         </div>
