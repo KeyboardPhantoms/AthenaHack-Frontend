@@ -47,9 +47,11 @@ const Register = () => {
         <input type="password" onChange={(e) => setPassword(e.target.value)} />
         <button onClick={registerUser}>Signup</button>
       </form>
-      <div className="bottom">
-        <span>Already have an account?</span>
-        <Link to="/"> Login</Link>
+      <div style={{ textAlign: 'center' }}>
+        <span>Already have an account ? &nbsp;</span>
+        <Link style={{ color: '#fff', textDecoration: 'none' }} to="/login">
+          Login
+        </Link>
       </div>
     </div>
   );
