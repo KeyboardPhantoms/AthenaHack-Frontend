@@ -43,16 +43,23 @@ npm run start
 ## Screenshots
 
 <h2>Homepage</h2>
+
 ![image](https://user-images.githubusercontent.com/63038880/147417416-247760ad-bb3e-47c3-af55-d46b7d719cb4.png)
+
 ![image](https://user-images.githubusercontent.com/63038880/147417457-02870298-ea40-4dee-bcd8-810bd074c858.png)
+
 ![image](https://user-images.githubusercontent.com/63038880/147417477-682f949a-f58e-4e81-a2e8-3bc3850e9228.png)
+
 ![image](https://user-images.githubusercontent.com/63038880/147417497-5df3a376-9384-4eea-9bf6-1c6e0b0f57a5.png)
+
 ![image](https://user-images.githubusercontent.com/63038880/147417518-66a08acc-3feb-451e-b4f7-0cb7ed8ddb4e.png)
+
 ![image](https://user-images.githubusercontent.com/63038880/147417531-d76f2993-5449-4b6a-b2db-6cf7f3e26d89.png)
 
 <h2>Login Page</h2>
+
 ![image](https://user-images.githubusercontent.com/63038880/147417587-e2c80e15-21dc-4052-9fc9-98b7118fbd14.png)
 
 <h2>About Us</h2>
+
 ![image](https://user-images.githubusercontent.com/63038880/147417582-701e23f3-0f03-4213-a6a5-275a2a7eb7c6.png)
-```
