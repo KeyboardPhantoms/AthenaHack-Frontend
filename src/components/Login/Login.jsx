@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import './Login.css';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,7 +11,7 @@ const Login = () => {
   async function loginUser(event) {
     event.preventDefault();
 
-    const response = await fetch('http://localhost:1337/api/login', {
+    const response = await fetch('http://localhost:5000/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -21,11 +23,11 @@ const Login = () => {
     });
 
     const data = await response.json();
-
+    console.log(data);
     if (data.user) {
       localStorage.setItem('token', data.user);
       alert('Login successful');
-      window.location.href = '/home';
+      window.location.href = '/user';
     } else {
       alert('Please check your username and password');
     }
