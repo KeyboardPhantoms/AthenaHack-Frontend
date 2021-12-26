@@ -33,6 +33,8 @@ cd Athenahack-Frontend
 npm i
 ```
 
+- and then start the app
+
 ```
 npm run start
 
